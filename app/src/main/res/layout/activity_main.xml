@@ -27,6 +27,7 @@
         android:contentDescription="@string/add_new_shop_item"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/icon_plus"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
