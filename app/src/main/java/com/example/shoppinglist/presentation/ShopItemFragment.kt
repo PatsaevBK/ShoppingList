@@ -145,7 +145,7 @@ class ShopItemFragment : Fragment() {
             tilCount.error = message
         }
         viewModel.shouldCloseScreen.observe(viewLifecycleOwner) {
-            onEditingFinishListener?.onEditingFinished()
+            onEditingFinishListener.onEditingFinished()
         }
     }
 

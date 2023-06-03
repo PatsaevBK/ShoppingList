@@ -3,6 +3,7 @@ package com.example.shoppinglist.presentation
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shoppinglist.R
 import com.example.shoppinglist.domain.ShopItem
@@ -21,6 +22,7 @@ class ShopItemActivity : AppCompatActivity(), ShopItemFragment.OnEditingFinishLi
         if (savedInstanceState == null) {
             launchRightMode()
         }
+        onBackPressSetup()
     }
 
     private fun launchRightMode() {
@@ -51,6 +53,15 @@ class ShopItemActivity : AppCompatActivity(), ShopItemFragment.OnEditingFinishLi
             }
             shopItemId = intent.getIntExtra(EXTRA_SHOP_ITEM_ID, ShopItem.UNDEFIEND_ID)
         }
+    }
+
+    private fun onBackPressSetup() {
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finish()
+            }
+        }
+        onBackPressedDispatcher.addCallback(this, callback)
     }
 
 

@@ -25,7 +25,7 @@ class ShopListAdapter :
 
     override fun onBindViewHolder(holder: ShopItemViewHolder, position: Int) {
         val shopItem = getItem(position)
-        holder.tvName.text = "${shopItem.name}"
+        holder.tvName.text = shopItem.name
         holder.tvCount.text = shopItem.count.toString()
         holder.view.setOnLongClickListener {
             onShopItemLongClickItemListener?.invoke(shopItem)
