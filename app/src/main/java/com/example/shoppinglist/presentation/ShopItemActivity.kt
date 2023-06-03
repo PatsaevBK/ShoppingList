@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shoppinglist.R
+import com.example.shoppinglist.databinding.ActivityShopItemBinding
 import com.example.shoppinglist.domain.ShopItem
 
 class ShopItemActivity : AppCompatActivity(), ShopItemFragment.OnEditingFinishListener {
@@ -13,11 +14,13 @@ class ShopItemActivity : AppCompatActivity(), ShopItemFragment.OnEditingFinishLi
 
     private var screenMode = MODE_UNKNOWN
     private var shopItemId = ShopItem.UNDEFIEND_ID
+    private lateinit var binding: ActivityShopItemBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_shop_item)
+        binding = ActivityShopItemBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         parseIntent()
         if (savedInstanceState == null) {
             launchRightMode()

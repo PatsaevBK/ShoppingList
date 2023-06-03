@@ -4,7 +4,8 @@
     <string name="save">Save</string>
     <string name="count">Count:</string>
     <string name="name">Name:</string>
-    <string name="error">Error</string>
+    <string name="error_name">Error name</string>
+    <string name="error_count">Error count</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
